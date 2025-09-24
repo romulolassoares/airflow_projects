@@ -4,17 +4,27 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
+
 dependencies = [
-    "apache-airflow==3.0.1",
+    "pandas>=2.3.1",
+    "polars>=1.32.3",
+    "pymongo>=4.14.0",
+    "pyyaml>=6.0.2",
+    "sqlalchemy>=1.4.54",
+]
+
+[dependency-groups]
+dev = [
+    "apache-airflow>=3.0.4",
     "apache-airflow-providers-common-compat>=1.7.3",
     "apache-airflow-providers-common-io>=1.6.2",
     "apache-airflow-providers-common-sql>=1.27.5",
-    "apache-airflow-providers-fab>=2.0.2",
+    "apache-airflow-providers-fab>=2.4.1",
     "apache-airflow-providers-google>=17.1.0",
     "apache-airflow-providers-microsoft-mssql>=4.3.2",
     "apache-airflow-providers-odbc>=4.10.2",
     "apache-airflow-providers-postgres>=6.2.3",
     "apache-airflow-providers-smtp>=2.2.0",
-    "apache-airflow-providers-standard>=1.5.0",
+    "apache-airflow-providers-standard>=1.6.0",
     "apache-airflow-providers-tableau>=5.2.0",
 ]
