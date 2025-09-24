@@ -192,6 +192,7 @@ dag = DAG(
     'earthquake_etl_pipeline',
     description='ETL pipeline for earthquake data from USGS API',
     catchup=False,
+    schedule="@daily",
 )
 
 def extract_data_from_api(**context):
