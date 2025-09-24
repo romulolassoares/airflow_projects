@@ -220,7 +220,7 @@ def extract_data_from_api(**context):
 def insert_raw_data_to_mongo(**context):
 
     logger = logging.getLogger("earthquake_etl")
-    config = load_config("./config.yaml")
+    config = load_config("/home/rlass/airflow/dags/airflow_projects/config.yaml")
 
     ti = context['ti']
     data = ti.xcom_pull(task_ids='extract_data_task')
@@ -289,7 +289,7 @@ def process_data(**context):
 
 def load_to_sqlserver(**context):
     logger = logging.getLogger("earthquake_etl")
-    config = load_config("./config.yaml")
+    config = load_config("/home/rlass/airflow/dags/airflow_projects/config.yaml")
 
     ti = context['ti']
     data_records = ti.xcom_pull(task_ids='process_data_task')
