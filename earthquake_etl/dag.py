@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.utils.dates import days_ago
 import requests
 import polars as pl
 import json
@@ -11,21 +10,10 @@ import pandas as pd
 from utils.load_config import load_config
 from utils.mongodb_ingester import MongoDBIngester
 
-# Default arguments for the DAG
-default_args = {
-    'owner': 'data_team',
-    'depends_on_past': False,
-    'start_date': days_ago(1),
-    'email_on_failure': False,
-    'email_on_retry': False,
-    'retries': 2,
-    'retry_delay': timedelta(minutes=5),
-}
 
 # Define the DAG
 dag = DAG(
     'earthquake_etl_pipeline',
-    default_args=default_args,
     description='ETL pipeline for earthquake data from USGS API',
     catchup=False,
 )
