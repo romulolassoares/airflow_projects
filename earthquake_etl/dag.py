@@ -7,8 +7,8 @@ import json
 import logging
 import pyodbc
 import pandas as pd
-from utils.load_config import load_config
-from utils.mongodb_ingester import MongoDBIngester
+from earthquake_etl.utils.load_config import load_config
+from earthquake_etl.utils.mongodb_ingester import MongoDBIngester
 
 
 # Define the DAG
